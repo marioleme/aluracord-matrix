@@ -36,7 +36,7 @@ function Titulo(props) {
 // export default HomePage
 
 export default function PaginaInicial() {
-  const [username, setUsername] = React.useState('marioleme');
+  const [username, setUsername] = React.useState('');
   const roteamento = useRouter();
 
   return (
@@ -69,7 +69,9 @@ export default function PaginaInicial() {
           <Box
           onSubmit={function (inforDoEvento){
             inforDoEvento.preventDefault();
-            roteamento.push('/chat');
+            // roteamento.push('/chat?username='+username);
+            roteamento.push(`/chat?username=${username}`);
+            // roteamento.push('/chat');
           }}
             as="form"
             styleSheet={{
